@@ -13,7 +13,7 @@ namespace JurisTempus.Data
 
     public BillingContext(DbContextOptions options) : base(options)
     {
-
+            // pocetni commit
     }
 
     public DbSet<Client> Clients { get; set; }
