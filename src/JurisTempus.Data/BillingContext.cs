@@ -13,7 +13,8 @@ namespace JurisTempus.Data
 
     public BillingContext(DbContextOptions options) : base(options)
     {
-
+           //3.1 verzija
+          //test
     }
 
     public DbSet<Client> Clients { get; set; }
