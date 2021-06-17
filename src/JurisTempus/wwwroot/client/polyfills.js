@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\projects\ModelsCourse\src\JurisTempus\client\polyfills.ts */"15rF");
+module.exports = __webpack_require__(/*! D:\courses\PS\Models-net5\Examples\3.1\m2\before\JurisTempus\client\polyfills.ts */"15rF");
 
 
 /***/ }),

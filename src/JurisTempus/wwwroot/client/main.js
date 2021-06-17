@@ -150,7 +150,7 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCompo
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\projects\ModelsCourse\src\JurisTempus\client\main.ts */"Q9gb");
+module.exports = __webpack_require__(/*! D:\courses\PS\Models-net5\Examples\3.1\m2\before\JurisTempus\client\main.ts */"Q9gb");
 
 
 /***/ }),

@@ -15,7 +15,7 @@ namespace JurisTempus.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.1")
+                .HasAnnotation("ProductVersion", "3.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -30,9 +30,7 @@ namespace JurisTempus.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("FileNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
@@ -187,18 +185,6 @@ namespace JurisTempus.Data.Migrations
                     b.HasIndex("InvoiceId");
 
                     b.ToTable("TimeBills");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CaseId = 1,
-                            EmployeeId = 1,
-                            Rate = 175.00m,
-                            TimeSegments = 5,
-                            WorkDate = new DateTime(2021, 4, 19, 0, 0, 0, 0, DateTimeKind.Local),
-                            WorkDescription = "Entered data for the client"
-                        });
                 });
 
             modelBuilder.Entity("JurisTempus.Data.Entities.Case", b =>
