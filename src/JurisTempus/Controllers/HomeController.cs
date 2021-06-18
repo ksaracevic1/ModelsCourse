@@ -54,16 +54,25 @@ namespace JurisTempus.Controllers
     [HttpPost("editor/{id:int}")]
     public async Task<IActionResult> ClientEditor(int id, ClientViewModel model)
     {
-      // Save changes to the Database
-      var oldClient = await _context.Clients
-        .Include(c => c.Address)
-        .Where(c => c.Id == id)
-        .FirstOrDefaultAsync();
-
-      if (oldClient != null)
+      if (ModelState.IsValid)
       {
-        // Update the Database
-        _mapper.Map(model, oldClient); // Copy changes
+        // Save changes to the Database
+        var oldClient = await _context.Clients
+          .Include(c => c.Address)
+          .Where(c => c.Id == id)
+          .FirstOrDefaultAsync();
+
+        if (oldClient != null)
+        {
+          // Update the Database
+          _mapper.Map(model, oldClient); // Copy changes
+
+        } else {
+          // Create a new one.
+          var newClient = _mapper.Map<Client>(model);
+          _context.Add(newClient);
+
+        }
 
         if (await _context.SaveChangesAsync() == 0)
         {
@@ -71,9 +80,7 @@ namespace JurisTempus.Controllers
         }
 
         return RedirectToAction("Index");
-
       }
-
       return View();
     }
 

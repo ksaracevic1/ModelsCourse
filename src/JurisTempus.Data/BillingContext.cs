@@ -26,6 +26,11 @@ namespace JurisTempus.Data
     {
       base.OnModelCreating(bldr); // Do the Default
 
+      bldr.Entity<Case>()
+        .Property(c => c.FileNumber)
+        .IsRequired()
+        .HasMaxLength(50);
+
       bldr.Entity<Client>(t =>
       {
         t.HasData(new Client
