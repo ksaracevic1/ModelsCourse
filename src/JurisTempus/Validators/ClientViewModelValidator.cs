@@ -21,8 +21,8 @@ namespace JurisTempus.Validators
                           {
                             return !(await ctx.Clients.AnyAsync(c => c.Name == value &&
                                                                 c.Id != model.Id));
-                          }).
-                          WithMessage("Name be unique.");
+                          })
+                          .WithMessage("Name must be unique");
                           
       RuleFor(c => c.ContactName).MaximumLength(50);
 

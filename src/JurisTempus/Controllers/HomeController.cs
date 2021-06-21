@@ -67,7 +67,9 @@ namespace JurisTempus.Controllers
           // Update the Database
           _mapper.Map(model, oldClient); // Copy changes
 
-        } else {
+        }
+        else
+        {
           // Create a new one.
           var newClient = _mapper.Map<Client>(model);
           _context.Add(newClient);
